@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VizeFinal</title>
+    <link rel="stylesheet" href="./style.css">
+       
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="icon-wrapper">
+    <ul class="icons">
+         <li>
+            <a href="https://twitter.com/ErolEmreGle1 " target="_blank"> <i id="icolor" class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/emre-g%C3%BCle%C3%A7-5429b8210/" target="_blank"><i id="icolor" class="fab fa-linkedin"></i> </a>
+        </li>
+        <li>
+            <a href="https://github.com/erolemre1" target="_blank"> <i id="icolor" class="fab fa-github"></i></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/emregulec._/?hl=tr" target="_blank"><i  id="icolor" class="fab fa-instagram"></i></a>
+        </li>
+        
+    </ul>
+</div>
+</head>
+
+<body>
+    
+  <div class="divv">
+    <label class="Vizetext"  for="txtVize">Vize:  </label>
+        
+         <input class="input" placeholder="Vize Notunu Giriniz..." type="text" name="txtVize" id="txtVize">
+    
+   
+    <label class="Vizetext" for="txtFinal">Final: </label>
+        <input class="input"  placeholder="Final Notunu Giriniz..." type="text" name="txtFinal" id="txtFinal">
+    
+    <input class="buttonh" class="input" type="button" name="button" id="hesapla" value="HESAPLA">
+    <div id="sonuc"> </div>
+    </div>
+
+
+
+
+<script>
+    var txtVize=document.getElementById("txtVize");
+    var txtFinal=document.getElementById("txtFinal");
+    var btnHesapla=document.getElementById("hesapla");
+    var sonucDiv=document.getElementById("sonuc");
+
+
+
+    btnHesapla.onclick=function(){
+        var vize=Number(txtVize.value);
+        var final=Number(txtFinal.value);
+
+
+        var ortalama =vize*40/100  +final*60/100;
+        var durum="";
+
+        if(ortalama >= 50 && final>=50 )
+        {
+            durum="GEÇTİNİZ" 
+        }
+        else if(ortalama >=50 && final<50 )
+        { 
+            durum="Final Notu 50 Puan Altında Kaldınız! "
+        }
+        else {
+            durum="Final ve Ortalama 50 Puanın Altında KALDINIZ!"
+        }
+        sonucDiv.innerHTML="Notunuz:" +ortalama+"<br>" +durum;
+    }
+</script>
+
+</body>
+    
+</html>
